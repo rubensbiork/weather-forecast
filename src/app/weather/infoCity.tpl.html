@@ -1,0 +1,23 @@
+<div class="col-xs-6 marginLeft" ng-show= "wc.tab == 'infoTab' && wc.cities.selectedCity.name">
+    <h4 class="text-center">
+    <strong>{{wc.cities.selectedCity.name}}</strong>
+    </h4>
+    <ul>
+        <li>
+            <strong>{{wc.cities.selectedCity.admin1.type}}:</strong>
+            <span>{{wc.cities.selectedCity.admin1.content}}</span>
+        </li>
+        <li>
+            <strong>{{wc.cities.selectedCity.country.type}}:</strong>
+            <span>{{wc.cities.selectedCity.country.content}}</span>
+        </li>
+        <li>
+            <strong>{{wc.cities.selectedCity.admin2.type}}:</strong>
+            <span>{{wc.cities.selectedCity.admin2.content}}</span>
+        </li>
+        <li>
+            <strong>{{wc.cities.selectedCity.timezone.type}}:</strong>
+            <span>{{wc.cities.selectedCity.timezone.content}}</span>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,29 @@
+<div class="col-md-offset-5" ng-controller="WeatherCtrl as wc">
+    <div>
+        <!-- tabs -->
+        <ul class="nav nav-pills pointer">
+            <li ng-class="{'active' : wc.tab == 'cityTab'}">
+                <a ng-click="wc.tab = 'cityTab'">Choose City</a>
+            </li>
+            <li ng-class="{'active' : wc.tab == 'infoTab', disabled: !wc.cities.selectedCity}">
+                <a ng-click="wc.tab = 'infoTab'">City</a>
+            </li>
+            <li ng-class="{'active' : wc.tab == 'weatherTab', disabled: !wc.cities.selectedCity}">
+                <a ng-click="wc.tab = 'weatherTab'">Weather</a>
+            </li>
+        </ul>
+        <br/>
+        <!-- city tab -->
+        <div class="width-35p" ng-show= "wc.tab == 'cityTab'">
+            <autocomplete data="wc.cities.names" on-type="wc.getCities"
+                attr-placeholder="City" on-select='wc.getSelectedCity'>
+            </autocomplete>
+        </div>
+        <!-- city info tab -->
+        <div ng-include src="'weather/infoCity.tpl.html'"></div>
+        <!-- weather chart tab -->
+        <div ng-show="wc.tab == 'weatherTab'" class="marginLeft">
+                <highchart config="wc.chart" class="chartSize"></highchart>
+        </div>
+    </div>
+</div>

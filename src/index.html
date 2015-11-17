@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="company" ng-controller="AppCtrl">
+    <head>
+        <title ng-bind="pageTitle"></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- font awesome from BootstrapCDN -->
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+        <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Nav bar -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href='#' ui-sref="weather">Weather</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div ui-view="main" />
+        </div>
+
+        <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+        <script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+        <!-- live reload it requires LiveReload plugin for the browser -->
+        <script src="http://localhost:35729/livereload.js"></script>
+    </body>
+</html>
